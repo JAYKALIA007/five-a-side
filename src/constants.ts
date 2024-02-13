@@ -1,3 +1,10 @@
+export const FORMATIONS = [ '1211', '2111', '1121' ]
+
+export const STRIKER_POSITION = "ST";
+export const MIDFIELDER_POSITION = "CM";
+export const DEFENDER_POSITION = "CB";
+export const GOALKEEPER_POSITION = "GK";
+
 export const PLAYERS = [
     //strikers
     { name: 'Pelé', position: 'ST' },
