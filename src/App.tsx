@@ -28,6 +28,8 @@ export default function App() {
     SELECTED_PLAYERS_DEFAULT_VALUE
   );
 
+  const [selectedPlusIndex, setSelectedPlusIndex] = useState<number>(0);
+
   useEffect(() => {
     setSelectedPosition(null);
     setSelectedPlayers(SELECTED_PLAYERS_DEFAULT_VALUE);
@@ -36,8 +38,6 @@ export default function App() {
   useEffect(() => {
     setSelectedPosition(null);
   }, [selectedPlayers]);
-
-  console.log({ selectedFormation, selectedPosition });
 
   const playerFilteredByPosition =
     selectedPosition === null
@@ -69,9 +69,9 @@ export default function App() {
       <div className="col-span-6 border flex justify-center items-center">
         <Formation
           formation={selectedFormation}
-          position={selectedPosition}
           setPosition={setSelectedPosition}
           players={selectedPlayers}
+          setSelectedPlusIndex={setSelectedPlusIndex}
         />
       </div>
       <div className="col-span-3 border max-h-screen overflow-y-scroll">
@@ -84,14 +84,12 @@ export default function App() {
         </div>
         <PlayerList
           players={filteredPlayers}
-          selectedPlayers={selectedPlayers}
           setSelectedPlayers={setSelectedPlayers}
           allowToAddPlayers={selectedPosition !== null}
           selectedPosition={selectedPosition}
+          selectedPlusIndex={selectedPlusIndex}
         />
       </div>
     </div>
   );
 }
-
-// solve for - selecting a midfielder first attahces it to the 1st pkayer i.e. the striker

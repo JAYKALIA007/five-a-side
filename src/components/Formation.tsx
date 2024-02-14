@@ -9,15 +9,16 @@ import {
 } from "../constants";
 type FormationPropType = {
   formation: string;
-  position: null | string;
   setPosition: React.Dispatch<React.SetStateAction<null | string>>;
   players: SelectedPlayers;
+  setSelectedPlusIndex: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const Formation: React.FC<FormationPropType> = ({
   formation,
   setPosition,
   players,
+  setSelectedPlusIndex,
 }) => {
   const formationArray = formation.split("");
   const noOfStrikers = parseInt(formationArray[0]);
@@ -48,12 +49,14 @@ export const Formation: React.FC<FormationPropType> = ({
         <div className="h-12 bg-green-800 flex justify-evenly">
           {Array(noOfStrikers)
             .fill("")
-            .map((_, index) => (
+            .map((_, index1) => (
               <Position
-                key={index}
+                key={index1}
                 position={STRIKER_POSITION}
                 setPosition={setPosition}
-                player={strikers[index]}
+                player={strikers[index1]}
+                index={index1}
+                setSelectedPlusIndex={setSelectedPlusIndex}
               />
             ))}
         </div>
@@ -61,12 +64,14 @@ export const Formation: React.FC<FormationPropType> = ({
         <div className="h-12 bg-green-800  flex justify-evenly">
           {Array(noOfMidfielders)
             .fill("")
-            .map((_, index) => (
+            .map((_, index2) => (
               <Position
-                key={index}
+                key={index2}
                 position={MIDFIELDER_POSITION}
                 setPosition={setPosition}
-                player={midFielders[index]}
+                player={midFielders[index2]}
+                index={noOfStrikers + index2}
+                setSelectedPlusIndex={setSelectedPlusIndex}
               />
             ))}
         </div>
@@ -74,12 +79,14 @@ export const Formation: React.FC<FormationPropType> = ({
         <div className="h-12 bg-green-800 flex justify-evenly">
           {Array(noOfDefenders)
             .fill("")
-            .map((_, index) => (
+            .map((_, index3) => (
               <Position
-                key={index}
+                key={index3}
                 position={DEFENDER_POSITION}
                 setPosition={setPosition}
-                player={defenders[index]}
+                player={defenders[index3]}
+                index={noOfStrikers + noOfMidfielders + index3}
+                setSelectedPlusIndex={setSelectedPlusIndex}
               />
             ))}
         </div>
@@ -89,6 +96,8 @@ export const Formation: React.FC<FormationPropType> = ({
             position={GOALKEEPER_POSITION}
             setPosition={setPosition}
             player={player5}
+            index={4}
+            setSelectedPlusIndex={setSelectedPlusIndex}
           />
         </div>
         <div className="h-12 bg-green-600"></div>
