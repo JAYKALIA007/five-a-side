@@ -1,6 +1,7 @@
 import React from "react";
 import { Player, SelectedPlayers } from "../types";
 import { PositionsEnum } from "../constants";
+import { PlayerImage } from "./PlayerImage";
 type PlayerListPropType = {
   players: Player[];
   position: string | null;
@@ -38,7 +39,10 @@ export const PlayerList: React.FC<PlayerListPropType> = ({
               }
             }}
           >
-            <span>{player.name}</span>
+            <div className="flex items-center gap-x-2">
+              <PlayerImage player={player} />
+              <span>{player.name}</span>
+            </div>
             <span>{player.position}</span>
           </button>
         ))}

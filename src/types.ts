@@ -1,6 +1,7 @@
 export type Player = {
     name :  string;
-    position: string
+    position: string;
+    imgUrl: string
 }
 
 export type SelectedPlayers = {
