@@ -1,24 +1,19 @@
 import React from "react";
 import { Position } from "./Position";
 import { SelectedPlayers } from "../types";
-import {
-  DEFENDER_POSITION,
-  GOALKEEPER_POSITION,
-  MIDFIELDER_POSITION,
-  STRIKER_POSITION,
-} from "../constants";
+import { PositionsEnum } from "../constants";
 type FormationPropType = {
   formation: string;
-  setPosition: React.Dispatch<React.SetStateAction<null | string>>;
+  setPosition: React.Dispatch<React.SetStateAction<null | PositionsEnum>>;
   players: SelectedPlayers;
-  setSelectedPlusIndex: React.Dispatch<React.SetStateAction<number>>;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const Formation: React.FC<FormationPropType> = ({
   formation,
   setPosition,
   players,
-  setSelectedPlusIndex,
+  setActiveIndex,
 }) => {
   const formationArray = formation.split("");
   const noOfStrikers = parseInt(formationArray[0]);
@@ -52,11 +47,11 @@ export const Formation: React.FC<FormationPropType> = ({
             .map((_, index1) => (
               <Position
                 key={index1}
-                position={STRIKER_POSITION}
+                position={PositionsEnum.STRIKER_POSITION}
                 setPosition={setPosition}
                 player={strikers[index1]}
                 index={index1}
-                setSelectedPlusIndex={setSelectedPlusIndex}
+                setActiveIndex={setActiveIndex}
               />
             ))}
         </div>
@@ -67,11 +62,11 @@ export const Formation: React.FC<FormationPropType> = ({
             .map((_, index2) => (
               <Position
                 key={index2}
-                position={MIDFIELDER_POSITION}
+                position={PositionsEnum.MIDFIELDER_POSITION}
                 setPosition={setPosition}
                 player={midFielders[index2]}
                 index={noOfStrikers + index2}
-                setSelectedPlusIndex={setSelectedPlusIndex}
+                setActiveIndex={setActiveIndex}
               />
             ))}
         </div>
@@ -82,22 +77,22 @@ export const Formation: React.FC<FormationPropType> = ({
             .map((_, index3) => (
               <Position
                 key={index3}
-                position={DEFENDER_POSITION}
+                position={PositionsEnum.DEFENDER_POSITION}
                 setPosition={setPosition}
                 player={defenders[index3]}
                 index={noOfStrikers + noOfMidfielders + index3}
-                setSelectedPlusIndex={setSelectedPlusIndex}
+                setActiveIndex={setActiveIndex}
               />
             ))}
         </div>
         <div className="h-12 bg-green-600"></div>
         <div className="h-12 bg-green-800 flex justify-evenly">
           <Position
-            position={GOALKEEPER_POSITION}
+            position={PositionsEnum.GOALKEEPER_POSITION}
             setPosition={setPosition}
             player={player5}
             index={4}
-            setSelectedPlusIndex={setSelectedPlusIndex}
+            setActiveIndex={setActiveIndex}
           />
         </div>
         <div className="h-12 bg-green-600"></div>

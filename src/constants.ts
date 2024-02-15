@@ -1,9 +1,11 @@
 export const FORMATIONS = [ '1211', '2111', '1121' ]
 
-export const STRIKER_POSITION = "ST";
-export const MIDFIELDER_POSITION = "CM";
-export const DEFENDER_POSITION = "CB";
-export const GOALKEEPER_POSITION = "GK";
+export enum PositionsEnum {
+    STRIKER_POSITION = "ST",
+    MIDFIELDER_POSITION = "CM",
+    DEFENDER_POSITION = "CB",
+    GOALKEEPER_POSITION = "GK"
+}
 
 export const PLAYERS = [
     //strikers
@@ -121,3 +123,11 @@ export const PLAYERS = [
     { name: 'Gordon Banks', position: 'GK' },
     { name: 'Petr Čech', position: 'GK' },   
 ];
+
+export const SELECTED_PLAYERS_DEFAULT_VALUE = {
+    player1: null,
+    player2: null,
+    player3: null,
+    player4: null,
+    player5: null,
+};

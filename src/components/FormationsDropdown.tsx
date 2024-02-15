@@ -3,21 +3,18 @@ import React, { Dispatch, SetStateAction } from "react";
 import { FORMATIONS } from "../constants";
 
 type FormationsDropdownPropType = {
-  selectedFormation: string;
-  setSelectedFormation: Dispatch<SetStateAction<string>>;
+  formation: string;
+  updateFormation: Dispatch<SetStateAction<string>>;
 };
 
 export const FormationsDropdown: React.FC<FormationsDropdownPropType> = ({
-  selectedFormation,
-  setSelectedFormation,
+  formation,
+  updateFormation,
 }) => {
   return (
     <div>
       <div>Select Formation</div>
-      <Select.Root
-        value={selectedFormation}
-        onValueChange={setSelectedFormation}
-      >
+      <Select.Root value={formation} onValueChange={updateFormation}>
         <Select.Trigger />
         <Select.Content position="popper">
           {FORMATIONS.map((formation) => (
