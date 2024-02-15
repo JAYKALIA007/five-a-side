@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# 5-a-Side Football Team Selector
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the 5-a-Side Football Team Selector! This open-source project allows users to create and manage their 5-a-side football teams, selecting players and choosing from different formations.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. **Player Selection:**
+   - Users can browse through a list of available players and select them to add to their team.
 
-### `npm start`
+2. **Formations:**
+   - Choose from three different formations: 1-2-1-1, 2-1-1-1, and 1-1-2-1.
+   - The selected formation dynamically updates on the screen.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Follow these steps to run the project locally:
 
-### `npm test`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/JAYKALIA007/five-a-side
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
+    ```bash
+    cd five-a-side
+    ```
 
-### `npm run build`
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Run the development server:
+    ```bash
+    npm start
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application will be accessible at `http://localhost:3000` in your web browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
 
-### `npm run eject`
+- React: JavaScript library for building user interfaces.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contributing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is open source, and contributions are welcome! If you have any ideas, enhancements, or bug fixes, please create an issue or submit a pull request.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Open Source Message
 
-## Learn More
+This project thrives on the principles of open source development. We encourage collaboration and appreciate the efforts of all contributors, big or small. Together, we can build something amazing!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Happy football team selecting! ⚽️🥅
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Todo List
+
+- **Search Player Feature:** Allow users to search for players by name.
+- **Share Formation Feature:** Enable sharing selected teams and formations through a generated URL.
+
+Feel free to contribute to the project and help us enhance these features!
+
