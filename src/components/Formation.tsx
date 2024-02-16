@@ -35,11 +35,6 @@ export const Formation: React.FC<FormationPropType> = ({
   return (
     <div>
       <p>Selected formation : {formation}</p>
-      <div>
-        <div>
-          {noOfStrikers}-{noOfMidfielders}-{noOfDefenders}-1
-        </div>
-      </div>
       <div className="w-80">
         <div className="h-12 bg-green-800 flex justify-evenly">
           {Array(noOfStrikers)

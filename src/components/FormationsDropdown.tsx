@@ -12,13 +12,17 @@ export const FormationsDropdown: React.FC<FormationsDropdownPropType> = ({
   updateFormation,
 }) => {
   return (
-    <div>
+    <div className="flex gap-x-2 items-center">
       <div>Select Formation</div>
       <Select.Root value={formation} onValueChange={updateFormation}>
         <Select.Trigger />
         <Select.Content position="popper">
           {FORMATIONS.map((formation) => (
-            <Select.Item value={formation} key={formation}>
+            <Select.Item
+              value={formation}
+              key={formation}
+              className="hover:cursor-pointer"
+            >
               {formation}
             </Select.Item>
           ))}
