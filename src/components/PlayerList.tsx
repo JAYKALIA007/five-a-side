@@ -1,6 +1,7 @@
 import React from "react";
 import { Player, SelectedPlayers } from "../types";
 import { PlayerImage } from "./PlayerImage";
+import { Tooltip } from "@radix-ui/themes";
 type PlayerListPropType = {
   players: Player[];
   position: string | null;
@@ -32,7 +33,12 @@ export const PlayerList: React.FC<PlayerListPropType> = ({
         >
           <div className="flex items-center gap-x-2">
             <PlayerImage player={player} />
-            <span>{player.name}</span>
+            <Tooltip
+              content="Select a position first"
+              className={`${allowToAddPlayers ? "hidden" : ""}`}
+            >
+              <span>{player.name}</span>
+            </Tooltip>
           </div>
           <span>{player.position}</span>
         </button>
