@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   FORMATIONS,
   PLAYERS,
@@ -11,6 +11,8 @@ import { PlayerList } from "./components/PlayerList";
 import { SelectedPlayers } from "./types";
 import { useFuzzySearch } from "./hooks/useFuzzySearch";
 import { Instructions } from "./components/Instructions";
+import { checkIfEntireTeamSelected } from "./helpers";
+import { TeamInfo } from "./components/TeamInfo";
 
 export default function App() {
   const [selectedFormation, setSelectedFormation] = useState<string>(
@@ -58,6 +60,11 @@ export default function App() {
 
   const isPlayerListEmpty = playersListToShow.length === 0;
 
+  const isEntireTeamSelected: boolean = useMemo(
+    () => checkIfEntireTeamSelected(selectedPlayers),
+    [selectedPlayers]
+  );
+
   return (
     <div className="grid  grid-flow-col h-screen">
       <div className="col-span-3 border flex justify-center items-center">
@@ -75,19 +82,20 @@ export default function App() {
             players={selectedPlayers}
             setActiveIndex={setActiveIndexInFormation}
           />
+          {isEntireTeamSelected && <TeamInfo players={selectedPlayers} />}
         </div>
       </div>
       <div className="col-span-3 border max-h-screen overflow-y-scroll">
         <div className="text-xl bg-gray-200 p-2 sticky top-0 rounded-md mb-4">
           {!selectedPosition && `Showing All Players`}
           {selectedPosition === PositionsEnum.STRIKER_POSITION &&
-            `Show Attackers only`}
+            `Showing Attackers only`}
           {selectedPosition === PositionsEnum.MIDFIELDER_POSITION &&
-            `Show Midfielders only`}
+            `Showing Midfielders only`}
           {selectedPosition === PositionsEnum.DEFENDER_POSITION &&
-            `Show Defenders only`}
+            `Showing Defenders only`}
           {selectedPosition === PositionsEnum.GOALKEEPER_POSITION &&
-            `Show Goalkeepers only`}
+            `Showing Goalkeepers only`}
           <input
             type="text"
             value={searchQuery}

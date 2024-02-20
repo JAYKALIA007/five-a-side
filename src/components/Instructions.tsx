@@ -2,7 +2,7 @@ import React from "react";
 
 export const Instructions = () => {
   return (
-    <div className="italic">
+    <div className="px-4 italic">
       <div className="text-xl font-medium">
         Steps to create your 5 a side dream team
       </div>

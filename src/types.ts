@@ -1,6 +1,7 @@
 export type Player = {
     name :  string;
     position: string;
+    country: string;
     imgUrl: string
 }
 
