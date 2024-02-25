@@ -20,7 +20,7 @@ export const PlayerList: React.FC<PlayerListPropType> = ({
       {players.map((player, index) => (
         <button
           key={`${player.name}-${index}`}
-          className={`hover:cursor-pointer hover:bg-gray-100 p-1 px-4 flex justify-between ${
+          className={`hover:cursor-pointer hover:bg-gray-100 p-1 px-4 flex items-center justify-between ${
             !allowToAddPlayers && "hover:!cursor-not-allowed"
           }`}
           disabled={!allowToAddPlayers}
@@ -37,10 +37,15 @@ export const PlayerList: React.FC<PlayerListPropType> = ({
               content="Select a position first"
               className={`${allowToAddPlayers ? "hidden" : ""}`}
             >
-              <span>{player.name}</span>
+              <>
+                <span>{player.name}</span>
+                <span className="text-[10px] text-gray-500">
+                  {player.position}
+                </span>
+              </>
             </Tooltip>
           </div>
-          <span>{player.position}</span>
+          <span className="text-sm text-gray-500">{player.rating}</span>
         </button>
       ))}
     </div>
