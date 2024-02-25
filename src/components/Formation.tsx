@@ -42,7 +42,7 @@ export const Formation: React.FC<FormationPropType> = ({
             .map((_, index1) => (
               <Position
                 key={index1}
-                position={PositionsEnum.STRIKER_POSITION}
+                position={PositionsEnum.ATTACKER_POSITION}
                 setPosition={setPosition}
                 player={strikers[index1]}
                 index={index1}
