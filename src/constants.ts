@@ -21,7 +21,7 @@ export const PLAYERS = [
     { name: 'Zlatan Ibrahimović', position: 'ATT', rating:84 ,country: 'SE', imgUrl: 'https://static.footballtransfers.com/images/cn/image/upload/q_75,w_1200/footballcritic/q51rvv6nemgheheg0fsy.webp' },
     { name: 'Robert Lewandowski', position: 'ATT', rating:87 ,country: 'PL', imgUrl: 'https://img.bundesliga.com/tachyon/sites/2/2019/08/GettyImages-1171334464.jpg?crop=358px,0px,3410px,2728px' },
     { name: 'Harry Kane', position: 'ATT', rating:86 ,country: 'GB', imgUrl: 'https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/10F68/production/_129108496_gettyimages-1475634507.jpg' },
-    { name: 'Wayne Rooney', position: 'ATT', rating:89 ,country: 'GB', imgUrl: 'https://lh3.googleusercontent.com/proxy/ChwQ1iLYepgHMmSNhGo0vL1-gak4Cdcf9Tiz2xUfhxqdWRZF5QQMRIq8W10scUotFCMLHMP7wRUGxeglqimbIx_TWGWYqGD66Q' },
+    { name: 'Wayne Rooney', position: 'ATT', rating:88 ,country: 'GB', imgUrl: 'https://lh3.googleusercontent.com/proxy/ChwQ1iLYepgHMmSNhGo0vL1-gak4Cdcf9Tiz2xUfhxqdWRZF5QQMRIq8W10scUotFCMLHMP7wRUGxeglqimbIx_TWGWYqGD66Q' },
     { name: 'Erling Haaland', position: 'ATT', rating:85 ,country: 'NO', imgUrl: 'https://static.independent.co.uk/2023/06/09/07/GettyImages-1481676096.jpg?width=1200&height=1200&fit=crop' },
     { name: 'Karim Benzema', position: 'ATT', rating:87 ,country: 'FR', imgUrl: 'https://assets-global.website-files.com/62fe3f004c3de985c9e10052/648e81d37dc14d20684bdd25_KB9-Landscape.jpg' },
     { name: 'Mohamed Salah', position: 'ATT', rating:86 ,country: 'EG', imgUrl: 'https://i2-prod.liverpool.com/incoming/article21560697.ece/ALTERNATES/s1200d/0_salahcenturion.jpg' },
