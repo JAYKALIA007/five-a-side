@@ -13,8 +13,18 @@ import { useFuzzySearch } from "../hooks/useFuzzySearch";
 import { Instructions } from "./Instructions";
 import { checkIfEntireTeamSelected } from "../helpers";
 import { TeamInfo } from "./TeamInfo";
+import { FootballKickAnimation } from "./animations/FootballAnimation";
 
 export const LandingPage = () => {
+  const [showKickAnimation, setShowKickAnimation] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowKickAnimation(false);
+    }, 2.3 * 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   const [selectedFormation, setSelectedFormation] = useState<string>(
     FORMATIONS[0]
   );
@@ -72,25 +82,28 @@ export const LandingPage = () => {
         <Instructions />
       </div>
       <div className="w-[40%]">
-        <div className="flex flex-col gap-10 justify-center items-center h-full w-full">
-          <FormationsDropdown
-            formation={selectedFormation}
-            updateFormation={setSelectedFormation}
-          />
-          <Formation
-            formation={selectedFormation}
-            setPosition={setSelectedPosition}
-            players={selectedPlayers}
-            setActiveIndex={setActiveIndexInFormation}
-          />
-          <div className="h-40 flex justify-center ">
-            {isEntireTeamSelected && (
-              <TeamInfo
-                players={selectedPlayers as NonNullableSelectedPlayers}
-              />
-            )}
+        {showKickAnimation && <FootballKickAnimation />}
+        {!showKickAnimation && (
+          <div className="flex flex-col gap-10 justify-center items-center h-full w-full">
+            <FormationsDropdown
+              formation={selectedFormation}
+              updateFormation={setSelectedFormation}
+            />
+            <Formation
+              formation={selectedFormation}
+              setPosition={setSelectedPosition}
+              players={selectedPlayers}
+              setActiveIndex={setActiveIndexInFormation}
+            />
+            <div className="h-40 flex justify-center ">
+              {isEntireTeamSelected && (
+                <TeamInfo
+                  players={selectedPlayers as NonNullableSelectedPlayers}
+                />
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <div className="w-[30%] max-h-screen overflow-y-scroll border-l-2 rounded-xl">
         <div className="text-xl bg-gray-200 p-2 sticky top-0 rounded-md mb-4">

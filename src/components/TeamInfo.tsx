@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { getRandomTeamMessages, getTeamRating } from "../helpers";
 import { NonNullableSelectedPlayers } from "../types";
 import ReactCountryFlag from "react-country-flag";
-import { ConfettiAnimation } from "./ConfettiAnimation";
+import { ConfettiAnimation } from "./animations/ConfettiAnimation";
 
 type TeamInfoPropTypes = {
   players: NonNullableSelectedPlayers;
