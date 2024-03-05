@@ -14,6 +14,7 @@ import { Instructions } from "./Instructions";
 import { checkIfEntireTeamSelected } from "../helpers";
 import { TeamInfo } from "./TeamInfo";
 import { FootballKickAnimation } from "./animations/FootballAnimation";
+import { PositionFilters } from "./PositionFilters";
 
 export const LandingPage = () => {
   const [showKickAnimation, setShowKickAnimation] = useState(true);
@@ -125,6 +126,10 @@ export const LandingPage = () => {
             }}
             placeholder="Search for a player"
             className="border w-full p-2 rounded-md text-sm my-2"
+          />
+          <PositionFilters
+            selectedPosition={selectedPosition}
+            onChange={setSelectedPosition}
           />
         </div>
 
