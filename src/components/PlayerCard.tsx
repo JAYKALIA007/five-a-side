@@ -1,15 +1,15 @@
 import React from "react";
 import { Player } from "../types";
 import ReactCountryFlag from "react-country-flag";
-import { SEE_MORE_GOOLGLE_SEARCH_URL } from "../constants";
+import { SEE_MORE_GOOLGE_SEARCH_URL } from "../constants";
 
-type PlayerCardPropType = {
+type PlayerCardPropsType = {
   player: Player;
 };
-export const PlayerCard: React.FC<PlayerCardPropType> = ({ player }) => {
+export const PlayerCard: React.FC<PlayerCardPropsType> = ({ player }) => {
   const handleSearch = () => {
     if (player.name) {
-      const searchUrl = `${SEE_MORE_GOOLGLE_SEARCH_URL}${encodeURIComponent(
+      const searchUrl = `${SEE_MORE_GOOLGE_SEARCH_URL}${encodeURIComponent(
         player.name
       )}`;
       window.open(searchUrl, "_blank");

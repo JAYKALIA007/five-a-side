@@ -8,7 +8,7 @@ export enum PositionsEnum {
 }
 
 export const FALLBACK_IMAGE_URL = 'https://cdn-icons-png.freepik.com/512/5281/5281619.png'
-export const SEE_MORE_GOOLGLE_SEARCH_URL = `https://www.google.com/search?q=`
+export const SEE_MORE_GOOLGE_SEARCH_URL = `https://www.google.com/search?q=`
 
 export const PLAYERS = [
     //attackers
