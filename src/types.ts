@@ -3,7 +3,8 @@ export type Player = {
     position: string;
     rating: number;
     country: string;
-    imgUrl: string
+    imgUrl: string;
+    description?: string;
 }
 
 export type SelectedPlayers = {
